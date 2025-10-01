@@ -1,19 +1,19 @@
 const path = require('path');
 
-module.exports = ({ env}) => ({
+module.exports = ({ env }) => ({
   connection: {
-    client: "postgres",
+    client: 'postgres',
     connection: {
-      host: env("DATABASE_HOST", "db.shweiekwuvubyefdeywc.supabase.co"),
-      port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME", "cuidardemim"),
-      user: env("DATABASE_USERNAME", "shweiekwuvubyefdeywc"),
-      password: env("DATABASE_PASSWORD", "qWEAP6cXJ41aws5U"),
-      ssl: env.bool('DATABASE_SSL', false)
+      host: env('DATABASE_HOST'),
+      port: env.int('DATABASE_PORT'),
+      database: env('DATABASE_NAME'),
+      user: env('DATABASE_USERNAME'),
+      password: env('DATABASE_PASSWORD'),
+      ssl: { rejectUnauthorized: false }, // Required for Supabase
     },
-    useNullAsDefault: true,
-  }
-})
+    pool: { /* ... */ },
+  },
+});
 
 // module.exports = ({ env }) => {
 //   const client = env('DATABASE_CLIENT', 'sqlite');
