@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
   proxy: true,
-  url: env('PUBLIC_URL', 'https://cuidardemim-be.onrender.com'),
+  url: env('PUBLIC_URL'),
   admin: {
     auth: {
       secret: env('ADMIN_JWT_SECRET'),

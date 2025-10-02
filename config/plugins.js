@@ -2,7 +2,7 @@ module.exports = ({ env }) => ({
     // ...
     email: {
       config: {
-        provider: 'nodemailer',
+        provider: 'console',
         providerOptions: {
           host: env('EMAIL_HOST', 'smtp-relay.brevo.com'),
           port: env('EMAIL_PORT', 587),
@@ -13,8 +13,8 @@ module.exports = ({ env }) => ({
           secure: false,
         },
         settings: {
-            defaultFrom: env('EMAIL_FROM'),
-            defaultReplyTo: env('EMAIL_FROM'),
+            defaultFrom: 'paulodaviddias4@gmail.com',
+            defaultReplyTo: 'paulodaviddias4@gmail.com',
         },
       },
     },
